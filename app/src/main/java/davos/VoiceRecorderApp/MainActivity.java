@@ -113,9 +113,11 @@ public class MainActivity extends AppCompatActivity {
                     mediaPlayer = null;
                     Toast.makeText(getApplicationContext(), "Playback Stopped", Toast.LENGTH_LONG).show();
                     imageMic.setColorFilter(0x000000);
-                } else if (mediaRecorder != null) {
-                    mediaRecorder.stop();
-                    mediaRecorder.release();
+                }
+                if (mediaRecorder != null) {
+                    mediaRecorder.reset();
+                //    mediaRecorder.stop();
+                  //  mediaRecorder.release();
                     mediaRecorder = null;
                     Toast.makeText(getApplicationContext(), "Recording Stopped", Toast.LENGTH_LONG).show();
                     imageMic.setColorFilter(0x000000);
